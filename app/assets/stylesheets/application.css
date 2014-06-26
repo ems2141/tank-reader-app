@@ -14,17 +14,21 @@
  *= require_self
  */
 
-
 body {
     background: #444488;
     color: #ffffff;
 }
 
-
 .field_with_errors {
     display: inline;
+
 input {
     border: 1px solid red;
 }
+}
+
+.link {
+    color: #ffffff;
+    font-size: 2em;
 }
 
