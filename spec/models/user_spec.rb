@@ -31,4 +31,9 @@ describe User do
     expect(user_1).to_not be_valid
   end
 
+  it 'password must be at least 8 characters' do
+    @user.password = '1234567'
+    expect(@user).to_not be_valid
+  end
+
 end
