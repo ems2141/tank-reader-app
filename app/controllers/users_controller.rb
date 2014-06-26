@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       log_user_in(@user)
       redirect_to users_path
     else
-      redirect_to new_user_path
+      render new_user_path
     end
   end
 end
