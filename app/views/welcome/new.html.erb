@@ -1,0 +1,19 @@
+<h1>Login Below</h1>
+
+<%= form_for @user, url: sessions_path  do |f| %>
+
+  <p>
+    <%= f.label :email  %>
+    <%= f.email_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :password  %>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit 'Login', :id => 'login_submit' %>
+  </p>
+
+<% end %>
