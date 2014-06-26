@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :users
   get '/login', to: 'welcome#new'
 
-  resources :sessions, only: [:create, :destroy]
+  resource :sessions, only: [:create, :destroy]
 end
