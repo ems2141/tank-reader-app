@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   def index
+    unless current_user.nil?
+
+    else
+      redirect_to root_path
+    end
   end
 
   def new
