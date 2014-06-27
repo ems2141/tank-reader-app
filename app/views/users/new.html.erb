@@ -1,11 +1,10 @@
-<h1>Register Below</h1>
+<h1>REGISTER BELOW</h1>
 
 <ul class="errors">
   <% @user.errors.full_messages.each do |error| %>
     <li> <%= error %></li>
   <% end %>
 </ul>
-
 
 <%= form_for @user do |f| %>
 <p>
