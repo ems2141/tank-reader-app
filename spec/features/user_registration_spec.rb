@@ -14,7 +14,7 @@ feature 'user registration' do
   end
 
   scenario 'a user that already has an account can login' do
-    User.create!(
+    create_user(
         name: 'Jay',
         email: 'jay@example.com',
         password: 'password'
@@ -30,7 +30,7 @@ feature 'user registration' do
   end
 
   scenario 'a user can logout' do
-    User.create!(
+    create_user(
         name: 'Jay',
         email: 'jay@example.com',
         password: 'password'

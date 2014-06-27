@@ -3,11 +3,7 @@ require 'rails_helper'
 describe User do
 
   before do
-    @user = User.new(
-        name: 'Jay',
-        email: 'jay@test.com',
-        password: 'password'
-    )
+    @user = new_user
     expect(@user).to be_valid
   end
 
@@ -23,8 +19,8 @@ describe User do
 
   it 'must have a unique email' do
     @user.save
-    user_1 = User.new(name: 'Jay',
-        email: 'jay@test.com',
+    user_1 = new_user(name: 'Jay',
+        email: 'jay@example.com',
         password: 'password'
     )
 
