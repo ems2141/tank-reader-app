@@ -26,4 +26,10 @@ class StationsController < ApplicationController
     @station.save
     redirect_to stations_path
   end
+
+  def destroy
+    @station = Station.find(params[:id])
+    @station.destroy
+    redirect_to stations_path
+  end
 end

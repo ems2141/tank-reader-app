@@ -12,3 +12,16 @@ def new_user(attributes = {})
   }
   User.new(defaults.merge(attributes))
 end
+
+def create_station(attributes = {})
+  station = new_station(attributes)
+  station.save!
+  station
+end
+
+def new_station(attributes = {})
+  defaults = {
+      name: 'Sinclair',
+  }
+  Station.new(defaults.merge(attributes))
+end
