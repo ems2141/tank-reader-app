@@ -1,0 +1,10 @@
+<h1>EDIT STATION INFO BELOW</h1>
+
+<%= form_for @station do |f| %>
+
+  <p><%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p><%= f.submit 'Update' %></p>
+<% end %>

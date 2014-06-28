@@ -5,7 +5,7 @@
 <ul>
   <% @stations.each do |station| %>
     <li>
-      <%= station.name %>
+      <%= link_to station.name, station_path(station) %>
     </li>
   <% end %>
 </ul>
