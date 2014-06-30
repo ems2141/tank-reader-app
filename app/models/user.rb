@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :stations
+
   has_secure_password
 
   validates :name, presence: true

@@ -1,6 +1,6 @@
 class StationsController < ApplicationController
   def index
-    @stations = Station.all
+    @stations = Station.where(user_id: current_user.id)
   end
 
   def new
@@ -8,7 +8,7 @@ class StationsController < ApplicationController
   end
 
   def create
-    @station = Station.create!(name: params[:station][:name])
+    @station = Station.create!(name: params[:station][:name], user_id: current_user.id)
     redirect_to stations_path
   end
 

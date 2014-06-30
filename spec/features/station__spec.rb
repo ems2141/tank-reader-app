@@ -3,8 +3,8 @@ require 'rails_helper'
 feature 'Station CRUD' do
 
   before do
-    user = create_user
-    log_user_in(user)
+    @user = create_user
+    log_user_in(@user)
   end
 
   scenario 'logged in users can create stations' do
@@ -17,7 +17,7 @@ feature 'Station CRUD' do
   end
 
   scenario 'user can edit a station' do
-    create_station(name: 'The West')
+    create_station(name: 'The West', user_id: @user.id)
 
     click_on 'My Stations'
     click_on 'The West'
@@ -30,8 +30,8 @@ feature 'Station CRUD' do
   end
 
   scenario 'user can destroy a station' do
-    create_station(name: 'BP')
-    create_station(name: 'Sinclair')
+    create_station(name: 'BP', user_id: @user.id)
+    create_station(name: 'Sinclair', user_id: @user.id)
 
     click_on 'My Stations'
     click_on 'BP'
@@ -39,5 +39,19 @@ feature 'Station CRUD' do
 
     expect(page).to have_no_content 'BP'
     expect(page).to have_content 'Sinclair'
+  end
+
+  scenario 'users should only see their own stations' do
+    user_2 = create_user(email: 'sam@test.com')
+    station_2 = create_station(name: 'BP',
+                   user_id: user_2.id
+    )
+    station_3 = create_station(name: 'Sinclair',
+                              user_id: @user.id
+    )
+
+    click_on 'My Stations'
+    expect(page).to have_content 'Sinclair'
+    expect(page).to have_no_content 'BP'
   end
 end
