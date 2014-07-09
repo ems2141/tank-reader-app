@@ -1,0 +1,11 @@
+<%= form_for [@station, @tank] do |f| %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit 'Create Tank' %>
+  </p>
+<% end %>

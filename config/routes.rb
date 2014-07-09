@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   resource :sessions, only: [:create, :destroy]
 
   resources :users
-  resources :stations
+  resources :stations do
+    resources :tanks
+  end
+
 end

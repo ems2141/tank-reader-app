@@ -14,6 +14,7 @@ class StationsController < ApplicationController
 
   def show
     @station = Station.find(params[:id])
+    @tanks = Tank.all
   end
 
   def edit

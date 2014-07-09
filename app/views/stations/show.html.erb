@@ -1,7 +1,15 @@
 <h1><%= @station.name %></h1>
 
-<p><%= link_to 'Edit', edit_station_path, class:'link' %></p>
+<p><%= link_to 'Edit', edit_station_path, class: 'link' %></p>
 
-<p><%= link_to 'Delete', station_path, method: :delete, class:'link' %></p>
+<p><%= link_to 'Delete', station_path, method: :delete, class: 'link' %></p>
 
-<p><%= link_to 'Add Tank', new_tank_path, class:'link' %></p>
+
+  <% @tanks.each do |tank| %>
+    <% if tank.station_id == @station.id %>
+      <%= tank.name %>
+    <% end %>
+  <% end %>
+
+<br>
+<p><%= link_to 'Add Tank', new_station_tank_path(@station), class: 'link' %></p>
