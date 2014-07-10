@@ -7,7 +7,7 @@
 
   <% @tanks.each do |tank| %>
     <% if tank.station_id == @station.id %>
-      <%= tank.name %>
+      <%= link_to tank.name, station_tank_path(@station, tank) %>
     <% end %>
   <% end %>
 
