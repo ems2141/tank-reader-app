@@ -32,4 +32,10 @@ class TanksController < ApplicationController
     @station = Station.find(params[:station_id])
     redirect_to station_path(@station)
   end
+
+  def destroy
+    @tank = Tank.find(params[:id]).destroy
+    @station = Station.find(params[:station_id])
+    redirect_to station_path(@station)
+  end
 end

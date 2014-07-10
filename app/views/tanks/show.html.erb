@@ -1,3 +1,5 @@
 <h1><%= @tank.name %></h1>
 
 <p><%= link_to 'Edit', [:edit, @station, @tank], class: 'link' %></p>
+
+<p><%= link_to 'Delete', station_tank_path(@station, @tank), method: :delete, class: 'link' %></p>
